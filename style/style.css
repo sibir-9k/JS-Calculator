@@ -6,38 +6,63 @@
 	box-sizing: border-box;
 }
 
-:root{
-  font-size: 18px;
+:root {
+	font-size: 18px;
 }
 
 .wrapper {
+	max-width: 900px;
+	height: 550px;
+	margin: 0 auto;
+	/* padding: 0 250px; */
+}
+
+.calculator {
 	display: grid;
+
+	/* border: 4px solid red; */
+	top: 50px;
+	border-radius: 20px;
 	justify-content: center;
 	align-content: center;
-	min-height: 100vh;
+	grid-template-columns: repeat(4, 100px);
+	grid-template-rows: repeat(1, 100px);
+}
+
+.keybord {
+	display: grid;
+	/* border: 4px solid red;  */
+	width: auto;
 	grid-template-columns: repeat(4, 100px);
 	grid-template-rows: repeat(5, 100px);
+	justify-items: center;
+	align-items: center;
 }
 
-.wrapper > button {
+.keybord > button {
 	cursor: pointer;
 	font-size: 1.5rem;
-	border: 1px solid white;
-	outline: none;
-	background-color: rgba(255, 255, 255, 0.75);
-}
-
-.wrapper > button:hover {
-	background-color: rgba(255, 255, 255, 0.9);
-}
-
-button {
+	background-color: rgba(178, 178, 178, 0.75);
 	width: 50px;
 	height: 50px;
 	border: none;
 	border-radius: 50%;
+	box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5);
 }
 
+.keybord > button:hover {
+	color: #fff;
+	background-color: rgba(247, 129, 129, 0.9);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+#clear {
+	color: #fff;
+	background-color: rgb(249, 3, 3);
+}
+#clear:hover {
+	color: #fff;
+	background-color: rgb(233, 82, 82);
+}
 .output {
 	grid-column: 1 / -1;
 	background-color: rgba(0, 0, 0, 0.75);
@@ -48,4 +73,13 @@ button {
 	padding: 10px;
 	word-wrap: break-word;
 	word-break: break-all;
+	border-radius: 20px 20px 0 0;
+}
+.previous-operand {
+	color: #fff;
+	font-size: 1.2rem;
+}
+.current-operand {
+	color: #fff;
+	font-size: 2rem;
 }

@@ -47,7 +47,7 @@ const clearVar = (num = "") => {
 
 const mathOperation = () => {
 	if (lastOperator === "+") {
-		result = parseFloat(prevNum) + parseFloat(currentNum);
+		result = parseFloat(result) + parseFloat(currentNum);
 	} else if (lastOperator === "-") {
 		result = parseFloat(result) - parseFloat(currentNum);
 	} else if (lastOperator === "/") {
@@ -66,7 +66,7 @@ equals.addEventListener("click", () => {
 	clearVar();
 	currentOperand.innerText = result;
 	currentNum = result;
-	// prevOperand.innerText = "";
+	prevNum = "";
 });
 
 clearBtn.addEventListener("click", () => {
@@ -74,5 +74,5 @@ clearBtn.addEventListener("click", () => {
 	currentOperand.innerText = 0;
 	prevNum = "";
 	currentNum = "";
-	result = null;
+	result = "";
 });

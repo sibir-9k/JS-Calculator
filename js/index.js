@@ -4,7 +4,7 @@ const prevOperand = document.getElementById("prevOperand");
 const currentOperand = document.getElementById("currentOperand");
 const clearBtn = document.getElementById("clear");
 const equals = document.getElementById("equals");
-
+const signChange = document.getElementById("sign-change");
 let prevNum = "";
 let currentNum = "";
 let haveDot = false;
@@ -75,4 +75,14 @@ clearBtn.addEventListener("click", () => {
 	prevNum = "";
 	currentNum = "";
 	result = "";
+});
+
+signChange.addEventListener("click", () => {
+	if (currentNum < 0) {
+		currentNum = Math.abs(Number(currentNum));
+    currentOperand.innerText = currentNum
+	} else {
+		currentNum = currentNum * -1;
+    currentOperand.innerText = currentNum
+	}
 });

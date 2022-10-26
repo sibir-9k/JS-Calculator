@@ -13,12 +13,12 @@
     <div class="wrapper">
       <div class="calculator">
         <div class="output">
-          <div class="previous-operand"></div>
-          <div class="current-operand"></div>
+          <div class="previous-operand" id="prevOperand">0</div>
+          <div class="current-operand" id="currentOperand">0</div>
         </div>
         <div class="keybord">
-          <button class="operator" id="clear">C</button>
-          <button class="operator" id="round-brackets">()</button>
+          <button class="clear" id="clear">C</button>
+          <button class="operator" id="%">%</button>
           <button class="operator" id="backspace">←</button>
           <button class="operator" id="/">/</button>
 
@@ -39,8 +39,8 @@
 
           <button class="operator" id="sign-change">+/-</button>
           <button class="number">0</button>
-          <button class="operator">,</button>
-          <button class="operator" id="empty">=</button>
+          <button class="number dot" id=".">.</button>
+          <button class="equals" id="equals">=</button>
         </div>
       </div>
     </div>

@@ -5,78 +5,69 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-
 :root {
 	font-size: 18px;
 }
-
 .wrapper {
-	max-width: 900px;
-	height: 550px;
-	margin: 0 auto;
-	/* padding: 0 250px; */
-}
-
-.calculator {
-	display: grid;
-	border: 4px solid rgb(36, 35, 35);
-	width: 45%;
-	border-radius: 20px;
+	background-color: rgb(46, 46, 46);
+	display: flex;
 	justify-content: center;
-	align-content: center;
-	grid-template-columns: repeat(4, 100px);
-	grid-template-rows: repeat(1, 100px);
-}
-
-.keybord {
-	display: grid;
-	grid-template-columns: repeat(4, 100px);
-	grid-template-rows: repeat(5, 100px);
-	justify-items: center;
+	height: 100vh;
 	align-items: center;
 }
-
-.keybord > button {
-	cursor: pointer;
-	font-size: 1.5rem;
-	background-color: rgba(178, 178, 178, 0.75);
-	width: 50px;
-	height: 50px;
-	border: none;
-	border-radius: 50%;
-	box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5);
-}
-
-.keybord > button:hover {
-	color: #fff;
-	background-color: rgba(247, 129, 129, 0.9);
-	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-#clear {
-	color: #fff;
-	background-color: rgb(249, 3, 3);
-}
-#clear:hover {
-	color: #fff;
-	background-color: rgb(233, 82, 82);
+.calculator {
+  border: 2px solid #000000;
+  border-radius: 10px;
 }
 .output {
-	grid-column: 1 / -1;
-	background-color: rgba(0, 0, 0, 0.75);
 	display: flex;
-	align-items: flex-end;
-	justify-content: space-around;
+	height: 80px;
+	background-color: black;
 	flex-direction: column;
-	padding: 10px;
-	word-wrap: break-word;
-	word-break: break-all;
-	border-radius: 20px 20px 0 0;
+	align-items: flex-end;
+	justify-content: center;
 }
 .previous-operand {
-	color: rgb(166, 161, 161);
+	color: rgb(152, 150, 150);
 	font-size: 1.2rem;
 }
 .current-operand {
 	color: #fff;
 	font-size: 2rem;
+}
+.keybord {
+	display: grid;
+	grid-template-columns: repeat(4, 90px);
+	grid-template-rows: repeat(5, 90px);
+}
+button {
+	cursor: pointer;
+	font-size: 1.5rem;
+	background-color: rgb(170, 169, 169);
+	border-color: rgb(251, 123, 123);
+  border-radius: 5px;
+	box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5);
+}
+.keybord .number:active {
+  font-size: 1.2rem;
+  background-color: rgb(219, 217, 217);
+}
+.clear {
+  background-color: rgba(241, 33, 33, 0.614);
+  color: #fff;
+}
+.clear:active {
+  background-color: rgb(246, 60, 60);
+  font-size: 1.2rem;
+}
+.operator:active {
+  font-size: 1.2rem;
+}
+.equals {
+  background-color: rgb(69, 69, 238);
+  color: #fff;
+}
+.equals:active {
+  background-color: rgb(99, 99, 249);
+  font-size: 1.2rem;
 }

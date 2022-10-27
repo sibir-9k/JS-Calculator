@@ -5,6 +5,8 @@ const currentOperand = document.getElementById("currentOperand");
 const clearBtn = document.getElementById("clear");
 const equals = document.getElementById("equals");
 const signChange = document.getElementById("sign-change");
+const backspace = document.getElementById("backspace");
+
 let prevNum = "";
 let currentNum = "";
 let haveDot = false;
@@ -80,9 +82,18 @@ clearBtn.addEventListener("click", () => {
 signChange.addEventListener("click", () => {
 	if (currentNum < 0) {
 		currentNum = Math.abs(Number(currentNum));
-    currentOperand.innerText = currentNum
+		currentOperand.innerText = currentNum;
 	} else {
 		currentNum = currentNum * -1;
-    currentOperand.innerText = currentNum
+		currentOperand.innerText = currentNum;
+	}
+});
+
+backspace.addEventListener("click", () => {
+	if (currentNum.length !== 0) {
+		currentNum = currentNum.substring(0, currentNum.length - 1);
+		currentOperand.innerText = currentNum;
+	} else if (currentNum.length == 0) {
+		currentOperand.innerText = 0;
 	}
 });

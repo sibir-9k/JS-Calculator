@@ -25,6 +25,33 @@ allNumber.forEach((number) => {
 	});
 });
 
+const clearVar = (num = "") => {
+	prevNum += currentNum + " " + num + " ";
+	prevOperand.innerText = prevNum;
+	currentOperand.innerText = "";
+	currentNum = "";
+};
+
+const mathOperation = () => {
+	switch (lastOperator) {
+		case "+":
+			result = parseFloat(result) + parseFloat(currentNum);
+			break;
+		case "-":
+			result = parseFloat(result) - parseFloat(currentNum);
+			break;
+		case "/":
+			result = parseFloat(result) / parseFloat(currentNum);
+			break;
+		case "×":
+			result = parseFloat(result) * parseFloat(currentNum);
+			break;
+		case "%":
+			result = parseFloat(result) % parseFloat(currentNum);
+			break;
+	}
+};
+
 allOperator.forEach((operator) => {
 	operator.addEventListener("click", (e) => {
 		if (!currentNum) return;
@@ -39,27 +66,6 @@ allOperator.forEach((operator) => {
 		lastOperator = operatorName;
 	});
 });
-
-const clearVar = (num = "") => {
-	prevNum += currentNum + " " + num + " ";
-	prevOperand.innerText = prevNum;
-	currentOperand.innerText = "";
-	currentNum = "";
-};
-
-const mathOperation = () => {
-	if (lastOperator === "+") {
-		result = parseFloat(result) + parseFloat(currentNum);
-	} else if (lastOperator === "-") {
-		result = parseFloat(result) - parseFloat(currentNum);
-	} else if (lastOperator === "/") {
-		result = parseFloat(result) / parseFloat(currentNum);
-	} else if (lastOperator === "×") {
-		result = parseFloat(result) * parseFloat(currentNum);
-	} else if (lastOperator === "%") {
-		result = parseFloat(result) % parseFloat(currentNum);
-	}
-};
 
 equals.addEventListener("click", () => {
 	if (!prevNum || !currentNum) return;
